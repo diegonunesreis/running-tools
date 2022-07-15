@@ -1,0 +1,22 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light px-4">
+  <i class="ph-person-simple-run" style="font-size: 40px; color: #fab005;"></i>
+  <a class="navbar-brand" [routerLink]="'/home'">
+    Running Tools
+  </a>
+  <button class="navbar-toggler" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">
+    &#9776;
+  </button>
+  <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" [routerLink]="'/pace-calculator'" (click)="isMenuCollapsed = false">Pace Calculator</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="'.'" (click)="isMenuCollapsed = true">HR Calculator</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="'.'" (click)="isMenuCollapsed = true">BMR Calculator</a>
+      </li>
+    </ul>
+  </div>
+</nav>

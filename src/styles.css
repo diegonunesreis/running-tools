@@ -1,1 +1,27 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global styles */
+
+/*
+SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+*/
+
+/*
+MAIN COLOR: #087f5b
+MAIN COLOR LIGHTER: #099268
+ACCENT COLOR: fab005
+GREY COLOR: #343a40
+*/
+
+div.wrapper,
+div.content-wrapper,
+div.sidebar {
+  min-height: 100vh;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: #343a40;
+}
