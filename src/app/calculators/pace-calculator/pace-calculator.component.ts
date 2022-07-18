@@ -9,10 +9,11 @@ import { NgbTimeStruct } from '@ng-bootstrap/ng-bootstrap';
 })
 export class PaceCalculatorComponent implements OnInit {
   DEFAULT_TIME_STRUCT = { hour: 0, minute: 0, second: 0 };
+  BOX_SHADOW_STYLE = '0 0 0 0.25rem rgb(253 250 13 / 36%)';
 
   time: NgbTimeStruct = this.DEFAULT_TIME_STRUCT;
   pace: NgbTimeStruct = this.DEFAULT_TIME_STRUCT;
-  distance: number;
+  distance: number = 0;
 
   /* lastCalc possible values: time, pace, distance */
   lastCalc: string | undefined;
@@ -22,10 +23,10 @@ export class PaceCalculatorComponent implements OnInit {
   ngOnInit(): void {
     document.getElementById('pacePicker')?.getElementsByClassName('ngb-tp-hour')[0].remove();
     document.getElementById('pacePicker')?.getElementsByClassName('ngb-tp-spacer')[0].remove();
-    this.onTimeClick();
+    this.setOnClickListener();
   }
 
-  onTimeClick() {
+  setOnClickListener() {
     setTimeout(() => {
       let inputsArr = document.getElementsByTagName('input');
       if (inputsArr && inputsArr.length > 0) {
@@ -47,10 +48,10 @@ export class PaceCalculatorComponent implements OnInit {
     if (JSON.stringify(this.pace) !== JSON.stringify(this.DEFAULT_TIME_STRUCT)) hasPace = true;
     if (this.distance && this.distance != 0) hasDistance = true;
 
-    console.log('hasTime ', hasTime);
-    console.log('hasDistance ', hasDistance);
-    console.log('hasPace ', hasPace);
-    console.log('lastCalc:', this.lastCalc);
+    // console.log('hasTime ', hasTime);
+    // console.log('hasDistance ', hasDistance);
+    // console.log('hasPace ', hasPace);
+    // console.log('lastCalc:', this.lastCalc);
 
     if (hasPace && hasDistance && !hasTime) {
       this.calcTime();
@@ -89,7 +90,7 @@ export class PaceCalculatorComponent implements OnInit {
 
     const minute = Math.floor(totalSeconds / 60) - hour * 60;
 
-    const second = totalSeconds - hour * 3600 - minute * 60;
+    const second = this.roundedToFixed(totalSeconds - hour * 3600 - minute * 60, 0);
 
     this.time = {
       hour: hour,
@@ -98,6 +99,7 @@ export class PaceCalculatorComponent implements OnInit {
     };
 
     this.lastCalc = 'time';
+    this.highlightField('time');
   }
 
   calcDistance() {
@@ -108,7 +110,8 @@ export class PaceCalculatorComponent implements OnInit {
 
     console.log(this.roundedToFixed(finalDistance / 1000, 2));
     this.distance = this.roundedToFixed(finalDistance / 1000, 2);
-    this.lastCalc = 'distance'
+    this.lastCalc = 'distance';
+    this.highlightField('distance');
   }
 
   calcPace() {
@@ -129,7 +132,8 @@ export class PaceCalculatorComponent implements OnInit {
       second: second
     };
 
-    this.lastCalc = 'pace'
+    this.lastCalc = 'pace';
+    this.highlightField('pace');
   }
 
   reset() {
@@ -144,4 +148,53 @@ export class PaceCalculatorComponent implements OnInit {
     return +(Math.round(input * rounded) / rounded).toFixed(digits);
   }
 
+  highlightField(field: string) {
+
+    switch (field) {
+      case 'time':
+        const timePickerInputs = document.getElementById('time-picker')?.getElementsByTagName('input');
+
+        if (timePickerInputs && timePickerInputs.length > 0) {
+          this.highlightArray(timePickerInputs)
+        }
+        break;
+      case 'distance':
+        const distanceInput = document.getElementById('distanceInput');
+
+        if (distanceInput) {
+          this.highlightSingle(distanceInput);
+        }
+        break;
+      case 'pace':
+        const paceInputs = document.getElementById('pacePicker')?.getElementsByTagName('input');
+
+        if (paceInputs) {
+          this.highlightArray(paceInputs);
+        }
+        break
+    }
+  }
+
+  highlightSingle(input: HTMLElement) {
+    input.style.boxShadow = this.BOX_SHADOW_STYLE;
+
+    setTimeout(() => {
+      input.style.boxShadow = '';
+    }, 2000);
+  }
+
+  highlightArray(inputs: HTMLCollectionOf<HTMLInputElement>) {
+    for (let i = 0; i < inputs.length; i++) {
+      let input = inputs.item(i);
+      if (input) {
+        input.style.boxShadow = this.BOX_SHADOW_STYLE;
+
+        setTimeout(() => {
+          if (input) {
+            input.style.boxShadow = '';
+          }
+        }, 2000);
+      }
+    }
+  }
 }

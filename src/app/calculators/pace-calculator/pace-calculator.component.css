@@ -1,38 +1,25 @@
-.main-container {
-  max-width: 384px;
-  margin: 0 auto;
-}
+/*
+SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
 
-.input-container {
+FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+*/
+
+.calc-grid {
+  max-width: 410px;
   display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 86px);
   align-items: center;
-  gap: 10px;
+  column-gap: 12px;
 }
 
-.calc-buttons {
-  display: grid;
-  /* justify-content: center; */
-  /* width: 300px; */
-  margin: 0 auto;
-  gap: 10px;
+.calc-btn {
+  grid-column: 1 / 5;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.clear-btn {
-  justify-self: center;
-  /* dis */
-  /* display: flex;
-  align-items: center;
-  justify-content: center; */
-}
-
-.time--grid {
-  grid-template-columns: 80px 1fr 60px;
-}
-
-.grid--4col {
-  grid-template-columns: 80px 1fr .5fr 60px;
-}
-
-.grid--4col2 {
-  grid-template-columns: 80px 1fr 1fr 60px;
-}
+/* .clear-btn { } */

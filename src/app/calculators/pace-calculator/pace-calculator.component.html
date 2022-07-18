@@ -1,46 +1,42 @@
-<div class="main-container">
-  <h3 class="pt-5 pb-2">Pace Calculator</h3>
-  <!-- <button type="button" class="btn btn-warning clear-btn">Erase</button> -->
+<div class="container">
 
-  <div class="input-container time--grid">
-    <span>Time: </span>
-    <ngb-timepicker id="time-picker" [(ngModel)]="time" [seconds]=true></ngb-timepicker>
-    <button type="button" class="btn btn-warning clear-btn" (click)="time=DEFAULT_TIME_STRUCT">
-      <!-- <i class="ph-eraser"></i> -->
-      Erase
-    </button>
-  </div>
+  <div class="row justify-content-md-center">
+    <h3 class="pt-5 pb-4 text-center">Pace Calculator</h3>
 
-  <div class="input-container grid--4col">
-    <span>Distance: </span>
-    <input type="number" id="distanceInput" name="distanceInput" class="form-control" [(ngModel)]="distance"
-       onclick="this.select()">
-    <select class="form-control">
-      <option value="km">KM</option>
-      <option value="miles">Miles</option>
-    </select>
-    <button type="button" class="btn btn-warning clear-btn" (click)="distance=0">
-      <!-- <i class="ph-eraser"></i> -->
-      Erase
-    </button>
-  </div>
+    <div class="calc-grid">
+      <span>Time</span>
+      <ngb-timepicker id="time-picker" [(ngModel)]="time" [seconds]=true style="grid-column: 2 / 4;"></ngb-timepicker>
+      <button type="button" class="btn btn-warning clear-btn" (click)="time=DEFAULT_TIME_STRUCT">
+        <!-- <i class="ph-eraser"></i> -->
+        Erase
+      </button>
 
-  <div class="input-container grid--4col2">
-    <span>Pace: </span>
-    <ngb-timepicker [(ngModel)]="pace" [seconds]=true id="pacePicker"s>
-    </ngb-timepicker>
-    <select class="form-control">
-      <option value="km">/KM</option>
-      <option value="miles">/Mile</option>
-    </select>
-    <button type="button" class="btn btn-warning clear-btn" (click)="pace=DEFAULT_TIME_STRUCT">
-      <!-- <i class="ph-eraser"></i> -->
-      Erase
-    </button>
-  </div>
+      <span>Distance</span>
+      <input type="number" id="distanceInput" name="distanceInput" class="form-control" [(ngModel)]="distance"
+        onclick="this.select()">
+      <select class="form-control">
+        <option value="km">KM</option>
+        <option value="miles">Miles</option>
+      </select>
+      <button type="button" class="btn btn-warning clear-btn" (click)="distance=0">
+        <!-- <i class="ph-eraser"></i> -->
+        Erase
+      </button>
 
-  <div class="calc-buttons mt-2">
-    <button type="button" class="btn btn-primary" (click)="calculate()">Calculate</button>
-    <button type="button" class="btn btn-light" (click)="reset()">Reset</button>
+      <span>Pace</span>
+      <ngb-timepicker [(ngModel)]="pace" [seconds]=true id="pacePicker">
+      </ngb-timepicker>
+      <select class="form-control">
+        <option value="km">/KM</option>
+        <option value="miles">/Mile</option>
+      </select>
+      <button type="button" class="btn btn-warning clear-btn" (click)="pace=DEFAULT_TIME_STRUCT">
+        <!-- <i class="ph-eraser"></i> -->
+        Erase
+      </button>
+
+      <button type="button" class="btn btn-primary calc-btn mt-4" (click)="calculate()">Calculate</button>
+      <button type="button" class="btn btn-light calc-btn mt-3" (click)="reset()">Reset</button>
+    </div>
   </div>
 </div>
