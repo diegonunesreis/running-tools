@@ -1,38 +1,41 @@
 <div class="main-container">
-  <h3>Pace Calculator</h3>
-  <!-- <button type="button" class="btn btn-warning clear-btn">Clear</button> -->
+  <h3 class="pt-5 pb-2">Pace Calculator</h3>
+  <!-- <button type="button" class="btn btn-warning clear-btn">Erase</button> -->
 
-  <div class="input-container grid--3col">
+  <div class="input-container time--grid">
     <span>Time: </span>
-    <ngb-timepicker [(ngModel)]="time" [seconds]=true (ngModelChange)="onInputChange()"></ngb-timepicker>
-    <button type="button" class="btn btn-warning clear-btn">
-      <i class="ph-eraser"></i>
+    <ngb-timepicker id="time-picker" [(ngModel)]="time" [seconds]=true></ngb-timepicker>
+    <button type="button" class="btn btn-warning clear-btn" (click)="time=DEFAULT_TIME_STRUCT">
+      <!-- <i class="ph-eraser"></i> -->
+      Erase
     </button>
   </div>
 
   <div class="input-container grid--4col">
     <span>Distance: </span>
     <input type="number" id="distanceInput" name="distanceInput" class="form-control" [(ngModel)]="distance"
-      (ngModelChange)="onInputChange()">
+       onclick="this.select()">
     <select class="form-control">
       <option value="km">KM</option>
       <option value="miles">Miles</option>
     </select>
-    <button type="button" class="btn btn-warning clear-btn">
-      <i class="ph-eraser"></i>
+    <button type="button" class="btn btn-warning clear-btn" (click)="distance=0">
+      <!-- <i class="ph-eraser"></i> -->
+      Erase
     </button>
   </div>
 
-  <div class="input-container grid--4col">
+  <div class="input-container grid--4col2">
     <span>Pace: </span>
-    <ngb-timepicker [(ngModel)]="pace" [seconds]=true id="pacePicker" (ngModelChange)="onInputChange()">
+    <ngb-timepicker [(ngModel)]="pace" [seconds]=true id="pacePicker"s>
     </ngb-timepicker>
     <select class="form-control">
-      <option value="km">per KM</option>
-      <option value="miles">per Miles</option>
+      <option value="km">/KM</option>
+      <option value="miles">/Mile</option>
     </select>
-    <button type="button" class="btn btn-warning clear-btn">
-      <i class="ph-eraser"></i>
+    <button type="button" class="btn btn-warning clear-btn" (click)="pace=DEFAULT_TIME_STRUCT">
+      <!-- <i class="ph-eraser"></i> -->
+      Erase
     </button>
   </div>
 

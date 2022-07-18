@@ -1,5 +1,5 @@
 .main-container {
-  max-width: 422px;
+  max-width: 384px;
   margin: 0 auto;
 }
 
@@ -20,15 +20,19 @@
 .clear-btn {
   justify-self: center;
   /* dis */
-  display: flex;
+  /* display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
 }
 
-.grid--3col {
+.time--grid {
   grid-template-columns: 80px 1fr 60px;
 }
 
 .grid--4col {
-  grid-template-columns: 80px 1fr .75fr 60px;
+  grid-template-columns: 80px 1fr .5fr 60px;
+}
+
+.grid--4col2 {
+  grid-template-columns: 80px 1fr 1fr 60px;
 }

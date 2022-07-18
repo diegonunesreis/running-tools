@@ -8,7 +8,7 @@ import { NgbTimeStruct } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./pace-calculator.component.css']
 })
 export class PaceCalculatorComponent implements OnInit {
-  private DEFAULT_TIME_STRUCT = { hour: 0, minute: 0, second: 0 };
+  DEFAULT_TIME_STRUCT = { hour: 0, minute: 0, second: 0 };
 
   time: NgbTimeStruct = this.DEFAULT_TIME_STRUCT;
   pace: NgbTimeStruct = this.DEFAULT_TIME_STRUCT;
@@ -22,12 +22,23 @@ export class PaceCalculatorComponent implements OnInit {
   ngOnInit(): void {
     document.getElementById('pacePicker')?.getElementsByClassName('ngb-tp-hour')[0].remove();
     document.getElementById('pacePicker')?.getElementsByClassName('ngb-tp-spacer')[0].remove();
+    this.onTimeClick();
   }
 
-  onInputChange() {
-    // console.log(this.time);
-    // console.log(this.pace);
-    // console.log(this.distance);
+  onTimeClick() {
+    setTimeout(() => {
+      let inputsArr = document.getElementsByTagName('input');
+      if (inputsArr && inputsArr.length > 0) {
+        for (let i = 0; i < inputsArr.length; i++) {
+          let input = inputsArr.item(i);
+          if (input) {
+            input.onclick = () => {
+              input?.select();
+            };
+          }
+        }
+      }
+    }, 0);
   }
 
   calculate() {
