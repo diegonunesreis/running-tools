@@ -15,6 +15,9 @@ export class PaceCalculatorComponent implements OnInit {
   pace: NgbTimeStruct = this.DEFAULT_TIME_STRUCT;
   distance: number = 0;
 
+  distanceUnit: number = 1;
+  paceUnit: number = 1;
+
   /* lastCalc possible values: time, pace, distance */
   lastCalc: string | undefined;
 
@@ -83,8 +86,7 @@ export class PaceCalculatorComponent implements OnInit {
 
   calcTime() {
     const paceSeconds = this.pace.minute * 60 + this.pace.second;
-    const distanceMeters = this.distance * 1000;
-    const totalSeconds = paceSeconds * distanceMeters / 1000;
+    const totalSeconds = paceSeconds * this.distance * this.distanceUnit / this.paceUnit;
 
     const hour = Math.floor(totalSeconds / 3600);
 
@@ -106,24 +108,21 @@ export class PaceCalculatorComponent implements OnInit {
     const paceSeconds = this.pace.minute * 60 + this.pace.second;
     const timeSeconds = this.time.hour * 3600 + this.time.minute * 60 + this.time.second;
 
-    const finalDistance = timeSeconds * 1000 / paceSeconds;
+    const finalDistance = timeSeconds * 1000 / paceSeconds * this.paceUnit;
+    this.distance = this.roundedToFixed(finalDistance / (1000 * this.distanceUnit), 2);
 
-    console.log(this.roundedToFixed(finalDistance / 1000, 2));
-    this.distance = this.roundedToFixed(finalDistance / 1000, 2);
     this.lastCalc = 'distance';
     this.highlightField('distance');
   }
 
   calcPace() {
-    const distanceMeters = this.distance * 1000;
+    const distanceMeters = this.distance * 1000 * this.distanceUnit;
     const timeSeconds = this.time.hour * 3600 + this.time.minute * 60 + this.time.second;
 
-    const paceSeconds = 1000 * timeSeconds / distanceMeters;
+    const paceSeconds = 1000 * this.paceUnit * timeSeconds / distanceMeters;
 
     const hour = Math.floor(paceSeconds / 3600);
-
     const minute = Math.floor(paceSeconds / 60) - hour * 60;
-
     const second = this.roundedToFixed(paceSeconds - hour * 3600 - minute * 60, 0);
 
     this.pace = {
@@ -197,4 +196,5 @@ export class PaceCalculatorComponent implements OnInit {
       }
     }
   }
+
 }
