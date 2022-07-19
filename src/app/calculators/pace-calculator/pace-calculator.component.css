@@ -7,6 +7,7 @@ FONT SIZE SYSTEM (px)
 */
 
 .calc-grid {
+  margin: 0 auto;
   max-width: 410px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -22,4 +23,18 @@ FONT SIZE SYSTEM (px)
   margin-right: auto;
 }
 
-/* .clear-btn { } */
+.clear-btn i {
+  vertical-align: middle;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+@media (min-width: 768px) { 
+  .clear-btn i {
+    display: none;
+  }
+
+  .clear-btn::before {
+    content: "Clear";
+  }  
+}
