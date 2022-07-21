@@ -10,32 +10,37 @@ Running Tools App consists of a cluster of tools for runners, such as pace calcu
 
 # General info
 
-Running Tools é uma caixa de ferramentas para praticantes de corrida. Contendo diversos recursos essenciais que facilitam o planejamento de treino dos atletas, como: pace calculation, target heart rate calcution, basal metabolic rate. 
+Running Tools is a toolbox for runners. Containing several essential features that make it easier for athletes to plan their training, such as: pace calculation, target heart rate calculation, basal metabolic rate.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.6.
+# Technologies
+This project was' created with:
+* [Angular](https://angular.io/) Cli version: 13.3.6
+* [Node.js](https://nodejs.org/) 16.14.2
+* [Package Manager](https://www.npmjs.com/) npm 8.10.0
+* [Bootstrap](https://getbootstrap.com/) version: 5
 
-#Running Application
+# Installation
+## Platform & tools
 
-## Development server
+You need to install Node.js and then the development tools. Node.js comes with a package manager called [npm](http://npmjs.org) for installing NodeJS applications and libraries.
+* [Install node.js](https://nodejs.org/) 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Get the Code
 
-## Code scaffolding
+Either clone this repository or fork it on GitHub and clone your fork:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```
+git clone https://github.com/diegonunesreis/runner-tools.git
+cd runner-tools
+```
 
-## Build
+Install local dependencies (from the project root folder):
+```
+npm install
+```
+(This will install the dependencies declared in the ./package.json file)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+## Running Application
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. 
