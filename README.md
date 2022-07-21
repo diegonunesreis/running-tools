@@ -1,6 +1,20 @@
 # RunningTools
 
+Running Tools App consists of a cluster of tools for runners, such as pace calculator, target heart rate calculator, Basal Metabolic Rate, among other features.
+
+## Table of contents
+* [General info](#general-info)
+* [Technologies](#technologies)
+* [Installation](#installation)
+* [Running Application](#running-application)
+
+# General info
+
+Running Tools é uma caixa de ferramentas para praticantes de corrida. Contendo diversos recursos essenciais que facilitam o planejamento de treino dos atletas, como: pace calculation, target heart rate calcution, basal metabolic rate. 
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.6.
+
+#Running Application
 
 ## Development server
 
