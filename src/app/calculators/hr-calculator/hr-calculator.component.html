@@ -1,0 +1,67 @@
+<div class="container mb-5">
+  <div class="calc-container">
+
+    <h3 class="mt-5 mb-2 mb-sm-5 text-center">Target Heart Rate Calculator</h3>
+
+    <div class="row mb-3">
+      <label for="selectMethod"
+        class="col-sm-2 col-form-label">Method</label>
+      <div class="col-sm-10">
+        <select class="form-select"
+          aria-label="Calculation Method"
+          id="selectMethod"
+          [(ngModel)]="selectedMethod">
+          <option selected
+            [value]=0>Basic</option>
+          <option [value]=1>Fulano de tal</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <label for="inputAge"
+        class="col-sm-2 col-form-label">Age</label>
+      <div class="col-sm-10">
+        <input type="number"
+          class="form-control"
+          id="inputAge"
+          min="1"
+          max="200"
+          [(ngModel)]="age">
+      </div>
+    </div>
+
+    <div class="container mb-4">
+      <div class="row mb-2">
+        <button type="button"
+          class="btn btn-primary calc-btn"
+          (click)="calculateClick()">Calculate</button>
+      </div>
+      <div class="row">
+        <button type="button"
+          class="btn btn-light calc-btn"
+          (click)="reset()">Reset</button>
+      </div>
+    </div>
+
+    <table class="table table-sm">
+      <thead class="table-light">
+        <tr>
+          <th>Target Zone</th>
+          <th>Intensity</th>
+          <th *ngIf="showResult">THR in Bpm</th>
+        </tr>
+      </thead>
+      <tr *ngFor="let t of targetRH; index as i">
+        <td>
+          <div>{{ t.name }}</div>
+          <div>{{ t.description }}</div>
+        </td>
+        <td>{{ t.min_pct_intensity }}% - {{ t.max_pct_intensity }}%</td>
+        <td *ngIf="showResult">{{ t.min_thr }} - {{ t.max_thr }}</td>
+      </tr>
+
+    </table>
+  </div>
+
+</div>
