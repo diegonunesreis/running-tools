@@ -23,7 +23,7 @@
         class="form-control"
         [(ngModel)]="distance"
         onclick="this.select()">
-      <select class="form-control"  [(ngModel)]="distanceUnit">
+      <select class="form-select" [(ngModel)]="distanceUnit">
         <option value="1">KM</option>
         <option value="1.6">Miles</option>
       </select>
@@ -38,7 +38,7 @@
         [seconds]=true
         id="pacePicker">
       </ngb-timepicker>
-      <select class="form-control" [(ngModel)]="paceUnit">
+      <select class="form-select" [(ngModel)]="paceUnit">
         <option value=1>/KM</option>
         <option value=1.6>/Mile</option>
       </select>
