@@ -27,11 +27,12 @@
           id="inputAge"
           min="1"
           max="200"
+          step="1"
           [(ngModel)]="age">
       </div>
     </div>
 
-    <div class="container mb-4">
+    <div class="container">
       <div class="row mb-2">
         <button type="button"
           class="btn btn-primary calc-btn"
@@ -42,9 +43,19 @@
           class="btn btn-light calc-btn"
           (click)="reset()">Reset</button>
       </div>
+
+      <div class="row mt-2">
+        <div #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed" class="p-0">
+          <div class="card">
+            <div class="card-body">
+              {{ errMsg }}
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <table class="table table-sm">
+    <table class="table table-sm mt-4">
       <thead class="table-light">
         <tr>
           <th>Target Zone</th>

@@ -8,9 +8,11 @@ import { HelperService } from 'src/app/utils/helper.service';
 })
 export class HrCalculatorComponent implements OnInit {
   selectedMethod = 0;
-  age: number;
+  age: number | undefined;
   showResult = false;
   targetRH = targetMock;
+  isCollapsed = true;
+  errMsg: string = 'Please, insert a valid age.';
 
   constructor(public helper: HelperService) { }
 
@@ -18,7 +20,8 @@ export class HrCalculatorComponent implements OnInit {
   }
 
   calculateClick() {
-    if(this.age < 0 || this.age > 200) {
+    if (!this.age || this.age < 0 || this.age > 200) {
+      this.showErrorMsg();
       return;
     }
 
@@ -32,23 +35,30 @@ export class HrCalculatorComponent implements OnInit {
     }
     this.showResult = true;
   }
+  
 
   calcFulano() {
   }
-  
+
   calcBasic() {
-    const mhr = 220 - this.age;
-    this.targetRH.forEach(t => {
-      t.min_thr = this.helper.roundedToFixed(mhr * t.min_pct_intensity / 100, 0);
-      t.max_thr = this.helper.roundedToFixed(mhr * t.max_pct_intensity / 100, 0);
-    });
-    console.log(this.targetRH)
+    if (this.age) {
+      const mhr = 220 - this.age;
+      this.targetRH.forEach(t => {
+        t.min_thr = this.helper.roundedToFixed(mhr * t.min_pct_intensity / 100, 0);
+        t.max_thr = this.helper.roundedToFixed(mhr * t.max_pct_intensity / 100, 0);
+      });
+    }
   }
-  
+
   reset() {
     this.showResult = false;
     this.selectedMethod = 0;
-    this.age = 0;
+    this.age = undefined;
+    this.isCollapsed = true;
+  }
+
+  showErrorMsg() {
+    this.isCollapsed = false;
   }
 }
 
