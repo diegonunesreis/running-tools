@@ -1,6 +1,7 @@
 import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { NgbTimeStruct } from '@ng-bootstrap/ng-bootstrap';
+import { HelperService } from 'src/app/utils/helper.service';
 
 @Component({
   selector: 'app-pace-calculator',
@@ -21,7 +22,7 @@ export class PaceCalculatorComponent implements OnInit {
   /* lastCalc possible values: time, pace, distance */
   lastCalc: string | undefined;
 
-  constructor() { }
+  constructor(public helper: HelperService) { }
 
   ngOnInit(): void {
     document.getElementById('pacePicker')?.getElementsByClassName('ngb-tp-hour')[0].remove();
@@ -50,11 +51,6 @@ export class PaceCalculatorComponent implements OnInit {
     if (JSON.stringify(this.time) !== JSON.stringify(this.DEFAULT_TIME_STRUCT)) hasTime = true;
     if (JSON.stringify(this.pace) !== JSON.stringify(this.DEFAULT_TIME_STRUCT)) hasPace = true;
     if (this.distance && this.distance != 0) hasDistance = true;
-
-    // console.log('hasTime ', hasTime);
-    // console.log('hasDistance ', hasDistance);
-    // console.log('hasPace ', hasPace);
-    // console.log('lastCalc:', this.lastCalc);
 
     if (hasPace && hasDistance && !hasTime) {
       this.calcTime();
@@ -92,7 +88,7 @@ export class PaceCalculatorComponent implements OnInit {
 
     const minute = Math.floor(totalSeconds / 60) - hour * 60;
 
-    const second = this.roundedToFixed(totalSeconds - hour * 3600 - minute * 60, 0);
+    const second = this.helper.roundedToFixed(totalSeconds - hour * 3600 - minute * 60, 0);
 
     this.time = {
       hour: hour,
@@ -109,7 +105,7 @@ export class PaceCalculatorComponent implements OnInit {
     const timeSeconds = this.time.hour * 3600 + this.time.minute * 60 + this.time.second;
 
     const finalDistance = timeSeconds * 1000 / paceSeconds * this.paceUnit;
-    this.distance = this.roundedToFixed(finalDistance / (1000 * this.distanceUnit), 2);
+    this.distance = this.helper.roundedToFixed(finalDistance / (1000 * this.distanceUnit), 2);
 
     this.lastCalc = 'distance';
     this.highlightField('distance');
@@ -123,7 +119,7 @@ export class PaceCalculatorComponent implements OnInit {
 
     const hour = Math.floor(paceSeconds / 3600);
     const minute = Math.floor(paceSeconds / 60) - hour * 60;
-    const second = this.roundedToFixed(paceSeconds - hour * 3600 - minute * 60, 0);
+    const second = this.helper.roundedToFixed(paceSeconds - hour * 3600 - minute * 60, 0);
 
     this.pace = {
       hour: hour,
@@ -140,11 +136,6 @@ export class PaceCalculatorComponent implements OnInit {
     this.pace = this.DEFAULT_TIME_STRUCT;
     this.distance = 0;
     this.lastCalc = undefined;
-  }
-
-  roundedToFixed(input: number, digits: number): number {
-    var rounded = Math.pow(10, digits);
-    return +(Math.round(input * rounded) / rounded).toFixed(digits);
   }
 
   highlightField(field: string) {

@@ -103,5 +103,7 @@
       }
     }
   },
-  "defaultProject": "running-tools"
+  "cli": {
+    "analytics": "985cdf03-c799-42b5-a11f-e7afe8a7a420"
+  }
 }

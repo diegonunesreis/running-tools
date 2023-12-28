@@ -1,0 +1,9 @@
+.calc-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.input-msg--alert {
+  color: red;
+  font-size: 0.8rem;
+}

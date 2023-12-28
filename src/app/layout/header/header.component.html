@@ -1,26 +1,37 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light px-md-4">
   <div class="container-fluid">
-    <button class="navbar-toggler" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">
+    <button class="navbar-toggler"
+      type="button"
+      (click)="isMenuCollapsed = !isMenuCollapsed">
       <span class="navbar-toggler-icon"></span>
     </button>
     <span class="d-flex">
-      <i class="ph-person-simple-run" style="font-size: 40px; color: #fab005;"></i>
-      <a class="navbar-brand" [routerLink]="'/home'">
+      <i class="ph-person-simple-run"
+        style="font-size: 40px; color: #fab005;"></i>
+      <a class="navbar-brand"
+        [routerLink]="'/home'">
         Running Tools
       </a>
     </span>
     <span></span>
 
-    <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse">
+    <div [ngbCollapse]="isMenuCollapsed"
+      class="collapse navbar-collapse">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" [routerLink]="'/pace-calculator'" (click)="isMenuCollapsed = true">Pace Calculator</a>
+          <a class="nav-link"
+            [routerLink]="'/pace-calculator'"
+            (click)="isMenuCollapsed = true">Pace Calculator</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="'.'" (click)="isMenuCollapsed = true">HR Calculator</a>
+          <a class="nav-link"
+            [routerLink]="'/target-heart-rate-calculator'"
+            (click)="isMenuCollapsed = true">HR Calculator</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="'.'" (click)="isMenuCollapsed = true">BMR Calculator</a>
+          <a class="nav-link"
+            [routerLink]="'.'"
+            (click)="isMenuCollapsed = true">BMR Calculator</a>
         </li>
       </ul>
     </div>

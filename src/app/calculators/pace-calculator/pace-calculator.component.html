@@ -1,59 +1,67 @@
 <div class="container">
-
   <div class="row justify-content-md-center">
     <h3 class="pt-5 pb-4 text-center">Pace Calculator</h3>
 
     <div class="calc-grid">
       <span>Time</span>
-      <ngb-timepicker id="time-picker"
+      <ngb-timepicker
+        id="time-picker"
         [(ngModel)]="time"
-        [seconds]=true
-        style="grid-column: 2 / 4;">
+        [seconds]="true"
+        style="grid-column: 2 / 4">
       </ngb-timepicker>
-      <button type="button"
+      <button
+        type="button"
         class="btn btn-warning clear-btn"
-        (click)="time=DEFAULT_TIME_STRUCT">
+        (click)="time = DEFAULT_TIME_STRUCT">
         <i class="ph-eraser"></i>
       </button>
 
       <span>Distance</span>
-      <input type="number"
+      <input
+        type="number"
         id="distanceInput"
         name="distanceInput"
         class="form-control"
         [(ngModel)]="distance"
-        onclick="this.select()">
-      <select class="form-control"  [(ngModel)]="distanceUnit">
+        onclick="this.select()" />
+      <select class="form-select" [(ngModel)]="distanceUnit">
         <option value="1">KM</option>
         <option value="1.6">Miles</option>
       </select>
-      <button type="button"
+      <button
+        type="button"
         class="btn btn-warning clear-btn"
-        (click)="distance=0">
+        (click)="distance = 0">
         <i class="ph-eraser"></i>
       </button>
 
       <span>Pace</span>
-      <ngb-timepicker [(ngModel)]="pace"
-        [seconds]=true
-        id="pacePicker">
+      <ngb-timepicker [(ngModel)]="pace" [seconds]="true" id="pacePicker">
       </ngb-timepicker>
-      <select class="form-control" [(ngModel)]="paceUnit">
-        <option value=1>/KM</option>
-        <option value=1.6>/Mile</option>
+      <select class="form-select" [(ngModel)]="paceUnit">
+        <option value="1">/KM</option>
+        <option value="1.6">/Mile</option>
       </select>
-      <button type="button"
+      <button
+        type="button"
         class="btn btn-warning clear-btn"
-        (click)="pace=DEFAULT_TIME_STRUCT">
+        (click)="pace = DEFAULT_TIME_STRUCT">
         <i class="ph-eraser"></i>
       </button>
 
-      <button type="button"
+      <button
+        type="button"
         class="btn btn-primary calc-btn mt-4"
-        (click)="calculate()">Calculate</button>
-      <button type="button"
+        (click)="calculate()">
+        Calculate
+      </button>
+      <button
+        type="button"
         class="btn btn-light calc-btn mt-3"
-        (click)="reset()">Reset</button>
+        (click)="reset()">
+        Reset
+      </button>
     </div>
   </div>
 </div>

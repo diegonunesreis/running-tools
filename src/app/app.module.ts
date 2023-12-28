@@ -9,6 +9,8 @@ import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { PaceCalculatorComponent } from './calculators/pace-calculator/pace-calculator.component';
+import { HrCalculatorComponent } from './calculators/hr-calculator/hr-calculator.component';
+import { HelperService } from './utils/helper.service';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,8 @@ import { PaceCalculatorComponent } from './calculators/pace-calculator/pace-calc
     HomeComponent,
     HeaderComponent,
     FooterComponent,
-    PaceCalculatorComponent
+    PaceCalculatorComponent,
+    HrCalculatorComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +27,7 @@ import { PaceCalculatorComponent } from './calculators/pace-calculator/pace-calc
     FormsModule,
     NgbModule
   ],
-  providers: [],
+  providers: [HelperService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

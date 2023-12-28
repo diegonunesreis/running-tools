@@ -1,0 +1,87 @@
+<div class="container mb-5">
+  <div class="calc-container">
+    <h3 class="mt-5 mb-2 mb-sm-5 text-center">Target Heart Rate Calculator</h3>
+
+    <section class="row mb-3">
+      <label for="selectMethod"
+        class="col-sm-2 col-form-label">Method</label>
+      <div class="col-sm-10">
+        <select class="form-select"
+          aria-label="Calculation Method"
+          id="selectMethod"
+          [(ngModel)]="selectedMethod"
+          (ngModelChange)="onSelectChange()">
+          <option selected
+            [value]="0">Basic</option>
+          <option [value]="1">Karvonen</option>
+        </select>
+      </div>
+    </section>
+
+    <section class="row mb-3">
+      <label for="inputAge"
+        class="col-sm-2 col-form-label">Age</label>
+      <div class="col-sm-10">
+        <input type="number"
+          class="form-control"
+          id="inputAge"
+          min="MIN_AGE"
+          max="MAX_AGE"
+          step="1"
+          [(ngModel)]="age"
+          (change)="validateAge()" />
+        <p class="input-msg--alert"
+          *ngIf="ageInvalid">insert a valid age</p>
+      </div>
+    </section>
+
+    <section class="row mb-3"
+      *ngIf="selectedMethod === '1'">
+      <label for="inputHrr"
+        class="col-sm-2 col-form-label">Resting Heart Rate</label>
+      <div class="col-sm-10">
+        <input type="number"
+          class="form-control"
+          id="inputHrr"
+          min="MIN_HRR"
+          max="MAX_HRR"
+          step="1"
+          [(ngModel)]="hrr"
+          (change)="validateHrr()" />
+        <p class="input-msg--alert"
+          *ngIf="hrrInvalid">insert a valid resting heart rate</p>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="row mb-2">
+        <button type="button"
+          class="btn btn-primary calc-btn"
+          (click)="calculateClick()">Calculate</button>
+      </div>
+      <div class="row">
+        <button type="button"
+          class="btn btn-light calc-btn"
+          (click)="reset()">Reset</button>
+      </div>
+    </div>
+
+    <table class="table table-sm mt-4">
+      <thead class="table-light">
+        <tr>
+          <th>Target Zone</th>
+          <th>Intensity</th>
+          <th *ngIf="showResult">THR in Bpm</th>
+        </tr>
+      </thead>
+      <tr *ngFor="let t of targetRH; index as i">
+        <td>
+          <div>{{ t.name }}</div>
+          <div>{{ t.description }}</div>
+        </td>
+        <td>{{ t.min_pct_intensity }}% - {{ t.max_pct_intensity }}%</td>
+        <td *ngIf="showResult">{{ t.min_thr }} - {{ t.max_thr }}</td>
+      </tr>
+    </table>
+  </div>
+</div>
