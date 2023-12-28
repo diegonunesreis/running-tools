@@ -1,6 +1,5 @@
 <div class="container mb-5">
   <div class="calc-container">
-
     <h3 class="mt-5 mb-2 mb-sm-5 text-center">Target Heart Rate Calculator</h3>
 
     <div class="row mb-3">
@@ -10,10 +9,11 @@
         <select class="form-select"
           aria-label="Calculation Method"
           id="selectMethod"
-          [(ngModel)]="selectedMethod">
+          [(ngModel)]="selectedMethod"
+          (ngModelChange)="onSelectChange()">
           <option selected
-            [value]=0>Basic</option>
-          <option [value]=1>Fulano de tal</option>
+            [value]="0">Basic</option>
+          <option [value]="1">Karvonen</option>
         </select>
       </div>
     </div>
@@ -25,10 +25,31 @@
         <input type="number"
           class="form-control"
           id="inputAge"
-          min="1"
-          max="200"
+          min="MIN_AGE"
+          max="MAX_AGE"
           step="1"
-          [(ngModel)]="age">
+          [(ngModel)]="age"
+          (change)="validateAge()" />
+        <p class="input-msg--alert"
+          *ngIf="ageInvalid">insert a valid age</p>
+      </div>
+    </div>
+
+    <div class="row mb-3"
+      *ngIf="selectedMethod === '1'">
+      <label for="inputHrr"
+        class="col-sm-2 col-form-label">Resting Heart Rate</label>
+      <div class="col-sm-10">
+        <input type="number"
+          class="form-control"
+          id="inputHrr"
+          min="MIN_HRR"
+          max="MAX_HRR"
+          step="1"
+          [(ngModel)]="hrr"
+          (change)="validateHrr()" />
+        <p class="input-msg--alert"
+          *ngIf="hrrInvalid">insert a valid resting heart rate</p>
       </div>
     </div>
 
@@ -42,16 +63,6 @@
         <button type="button"
           class="btn btn-light calc-btn"
           (click)="reset()">Reset</button>
-      </div>
-
-      <div class="row mt-2">
-        <div #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed" class="p-0">
-          <div class="card">
-            <div class="card-body">
-              {{ errMsg }}
-            </div>
-          </div>
-        </div>
       </div>
     </div>
 
@@ -71,8 +82,6 @@
         <td>{{ t.min_pct_intensity }}% - {{ t.max_pct_intensity }}%</td>
         <td *ngIf="showResult">{{ t.min_thr }} - {{ t.max_thr }}</td>
       </tr>
-
     </table>
   </div>
-
 </div>
