@@ -2,7 +2,7 @@
   <div class="calc-container">
     <h3 class="mt-5 mb-2 mb-sm-5 text-center">Target Heart Rate Calculator</h3>
 
-    <div class="row mb-3">
+    <section class="row mb-3">
       <label for="selectMethod"
         class="col-sm-2 col-form-label">Method</label>
       <div class="col-sm-10">
@@ -16,9 +16,9 @@
           <option [value]="1">Karvonen</option>
         </select>
       </div>
-    </div>
+    </section>
 
-    <div class="row mb-3">
+    <section class="row mb-3">
       <label for="inputAge"
         class="col-sm-2 col-form-label">Age</label>
       <div class="col-sm-10">
@@ -33,9 +33,9 @@
         <p class="input-msg--alert"
           *ngIf="ageInvalid">insert a valid age</p>
       </div>
-    </div>
+    </section>
 
-    <div class="row mb-3"
+    <section class="row mb-3"
       *ngIf="selectedMethod === '1'">
       <label for="inputHrr"
         class="col-sm-2 col-form-label">Resting Heart Rate</label>
@@ -51,7 +51,7 @@
         <p class="input-msg--alert"
           *ngIf="hrrInvalid">insert a valid resting heart rate</p>
       </div>
-    </div>
+    </section>
 
     <div class="container">
       <div class="row mb-2">

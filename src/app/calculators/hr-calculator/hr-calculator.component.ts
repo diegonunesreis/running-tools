@@ -17,7 +17,6 @@ export class HrCalculatorComponent implements OnInit {
   hrr: number | undefined;
   showResult = false;
   targetRH = targetMock;
-  errMsg: string = 'Please, insert a valid age.';
 
   ageInvalid = false;
   hrrInvalid = false;
@@ -42,7 +41,7 @@ export class HrCalculatorComponent implements OnInit {
     }
   }
 
-  calcBasic() {
+  calcBasic(): void {
     if (this.ageInvalid) {
       return;
     }
@@ -55,7 +54,7 @@ export class HrCalculatorComponent implements OnInit {
     this.showResult = true;
   }
 
-  calcKarvonen() {
+  calcKarvonen(): void {
     if (this.ageInvalid || this.hrrInvalid) {
       return;
     }
