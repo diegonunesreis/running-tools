@@ -52,11 +52,6 @@ export class PaceCalculatorComponent implements OnInit {
     if (JSON.stringify(this.pace) !== JSON.stringify(this.DEFAULT_TIME_STRUCT)) hasPace = true;
     if (this.distance && this.distance != 0) hasDistance = true;
 
-    // console.log('hasTime ', hasTime);
-    // console.log('hasDistance ', hasDistance);
-    // console.log('hasPace ', hasPace);
-    // console.log('lastCalc:', this.lastCalc);
-
     if (hasPace && hasDistance && !hasTime) {
       this.calcTime();
     }
