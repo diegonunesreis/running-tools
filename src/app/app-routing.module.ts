@@ -6,9 +6,7 @@ import { PaceCalculatorComponent } from './calculators/pace-calculator/pace-calc
 import { HrCalculatorComponent } from './calculators/hr-calculator/hr-calculator.component';
 
 const routes: Routes = [
-  // { path: '', component: HomeComponent },
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
+  { path: '', component: HomeComponent },
   { path: 'pace-calculator', component: PaceCalculatorComponent },
   { path: 'target-heart-rate-calculator', component: HrCalculatorComponent }
 ];

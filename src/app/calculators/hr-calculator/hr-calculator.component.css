@@ -4,6 +4,6 @@
 }
 
 .input-msg--alert {
-  color: red;
+  color: var(--bs-danger);
   font-size: 0.8rem;
 }

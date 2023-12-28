@@ -1,0 +1,28 @@
+button {
+  text-align: start;
+  width: 100%;
+}
+
+.card {
+  min-height: 360px;
+  background-size: cover;
+  background-position: center;
+  box-shadow: inset 0 120px 100px rgba(0, 0, 0, 0.8);
+}
+
+.card:hover {
+  box-shadow: inset 0 100px 150px rgba(0, 0, 0, 1);
+  color: var(--accent-color) !important;
+}
+
+.card--pace {
+  background-image: url('/assets/images/pace.jpg');
+}
+
+.card--hr {
+  background-image: url('/assets/images/heart_rate.jpg');
+}
+
+.card--mbr {
+  background-image: url('/assets/images/metabolic_basal_rate.jpg');
+}

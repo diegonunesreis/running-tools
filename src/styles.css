@@ -25,3 +25,10 @@ body {
   font-family: 'Inter', sans-serif;
   color: #343a40;
 }
+
+:root {
+  --primary: #087f5b;
+  --primary-lighter: #099268;
+  --accent-color: #fab005;
+  --grey: #343a40;
+}
