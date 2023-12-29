@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light px-md-4">
+<nav class="navbar navbar-expand-lg px-md-4" style="background-color: var(--bs-gray-200)">
   <div class="container-fluid">
     <button class="navbar-toggler"
       type="button"
@@ -7,9 +7,9 @@
     </button>
     <span class="d-flex">
       <i class="ph-person-simple-run"
-        style="font-size: 40px; color: #fab005;"></i>
+        style="font-size: 40px; color: var(--accent-color)"></i>
       <a class="navbar-brand"
-        [routerLink]="'/home'">
+        [routerLink]="'/'">
         Running Tools
       </a>
     </span>
@@ -30,7 +30,7 @@
         </li>
         <li class="nav-item">
           <a class="nav-link"
-            [routerLink]="'.'"
+            [routerLink]="'/bmr-calculator'"
             (click)="isMenuCollapsed = true">BMR Calculator</a>
         </li>
       </ul>

@@ -24,4 +24,17 @@ div.sidebar {
 body {
   font-family: 'Inter', sans-serif;
   color: #343a40;
+  background-color: rgba(var(--bs-light-rgb));
+}
+
+:root {
+  --primary: #087f5b;
+  --primary-lighter: #099268;
+  --accent-color: #fab005;
+  --grey: #343a40;
+}
+
+.calc-container {
+  max-width: 600px;
+  margin: 0 auto;
 }

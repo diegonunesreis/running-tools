@@ -11,6 +11,7 @@ import { FooterComponent } from './layout/footer/footer.component';
 import { PaceCalculatorComponent } from './calculators/pace-calculator/pace-calculator.component';
 import { HrCalculatorComponent } from './calculators/hr-calculator/hr-calculator.component';
 import { HelperService } from './utils/helper.service';
+import { BmrCalculatorComponent } from './calculators/bmr-calculator/bmr-calculator.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { HelperService } from './utils/helper.service';
     HeaderComponent,
     FooterComponent,
     PaceCalculatorComponent,
-    HrCalculatorComponent
+    HrCalculatorComponent,
+    BmrCalculatorComponent
   ],
   imports: [
     BrowserModule,
