@@ -1,9 +1,10 @@
-.calc-container {
-  max-width: 600px;
-  margin: 0 auto;
-}
+
 
 .input-msg--alert {
   color: var(--bs-danger);
   font-size: 0.8rem;
+}
+
+.table tr div {
+  background: none;
 }

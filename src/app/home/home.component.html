@@ -1,6 +1,6 @@
-<div class="container d-flex align-items-center">
-  <div class="row py-5">
-
+<div class="container">
+  <div class="row py-5 d-flex align-items-center"
+    style="height: 80vh;">
     <div class="col-12 col-md-4">
       <button class="btn"
         [routerLink]="'/pace-calculator'">
@@ -8,7 +8,7 @@
           <div class="card-body">
             <span class="d-flex align-items-center">
               <i class="ph ph-timer"
-                style="font-size: 40px; "></i>
+                style="font-size: 40px;"></i>
               <h5 class="m-0 ps-1 fw-semibold">Pace Calculator</h5>
             </span>
             <p class="card-text py-3">Determine your pace per kilometer or mile based on your desired time and distance.
@@ -25,7 +25,7 @@
           <div class="card-body">
             <span class="d-flex align-items-center">
               <i class="ph ph-heartbeat"
-                style="font-size: 40px; "></i>
+                style="font-size: 40px;"></i>
               <h5 class="m-0 ps-1 fw-semibold">Heart Rate</h5>
             </span>
             <p class="card-text py-3">Discover personalized heart rate zones to enhance your fitness journey.</p>
@@ -35,12 +35,13 @@
     </div>
 
     <div class="col-12 col-md-4">
-      <button class="btn">
+      <button class="btn"
+        [routerLink]="'/bmr-calculator'">
         <div class="card card--mbr text-bg-dark">
           <div class="card-body">
             <span class="d-flex align-items-center">
               <i class="ph-lightning"
-                style="font-size: 40px; "></i>
+                style="font-size: 40px;"></i>
               <h5 class="m-0 ps-1 fw-semibold">Basal Metabolic Rate (BMR)</h5>
             </span>
             <p class="card-text py-3">Understanding your metabolic baseline.</p>
