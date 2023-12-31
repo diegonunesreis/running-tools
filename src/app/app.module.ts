@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module'; 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -12,6 +12,7 @@ import { PaceCalculatorComponent } from './calculators/pace-calculator/pace-calc
 import { HrCalculatorComponent } from './calculators/hr-calculator/hr-calculator.component';
 import { HelperService } from './utils/helper.service';
 import { BmrCalculatorComponent } from './calculators/bmr-calculator/bmr-calculator.component';
+import { UnderConstructionComponent } from 'src/shared/feedbacks/under-construction/under-construction.component';
 
 @NgModule({
   declarations: [
@@ -21,12 +22,14 @@ import { BmrCalculatorComponent } from './calculators/bmr-calculator/bmr-calcula
     FooterComponent,
     PaceCalculatorComponent,
     HrCalculatorComponent,
-    BmrCalculatorComponent
+    BmrCalculatorComponent,
+    UnderConstructionComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     NgbModule
   ],
   providers: [HelperService],

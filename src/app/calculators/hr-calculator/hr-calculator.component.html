@@ -2,7 +2,8 @@
   <div class="calc-container">
     <h3 class="mt-5 text-center">Target Heart Rate Calculator</h3>
 
-    <p class="my-5">Unlock your optimal workout intensity with our Target Heart Rate Calculator. Tailor your exercise routine based
+    <p class="my-5">Unlock your optimal workout intensity with our Target Heart Rate Calculator. Tailor your exercise
+      routine based
       on your age and preferred calculation method. Choose between Basic or Karvonen methods, input your age and, for
       advanced accuracy, include your resting heart rate. Instantly discover personalized heart rate zones to enhance
       your fitness journey. Hit the sweet spot between effort and efficiency for a healthier, more effective workout.
@@ -80,14 +81,16 @@
           <th *ngIf="showResult">THR in Bpm</th>
         </tr>
       </thead>
-      <tr *ngFor="let t of targetRH; index as i">
-        <td>
-          <div>{{ t.name }}</div>
-          <div>{{ t.description }}</div>
-        </td>
-        <td>{{ t.min_pct_intensity }}% - {{ t.max_pct_intensity }}%</td>
-        <td *ngIf="showResult">{{ t.min_thr }} - {{ t.max_thr }}</td>
-      </tr>
+      <tbody>
+        <tr *ngFor="let t of targetRH; index as i">
+          <td>
+            <div>{{ t.name }}</div>
+            <div>{{ t.description }}</div>
+          </td>
+          <td>{{ t.min_pct_intensity }}% - {{ t.max_pct_intensity }}%</td>
+          <td *ngIf="showResult">{{ t.min_thr }} - {{ t.max_thr }}</td>
+        </tr>
+      </tbody>
     </table>
   </div>
 </div>
