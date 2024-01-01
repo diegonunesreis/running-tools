@@ -5,6 +5,15 @@
   "projects": {
     "running-tools": {
       "projectType": "application",
+      "i18n": {
+        "sourceLocale": "en-US",
+        "locales": {
+          "pt-BR": {
+            "translation": "src/locale/messages.pt.xlf",
+            "baseHref": "pt-BR/" 
+          }
+        }
+      },
       "schematics": {
         "@schematics/angular:application": {
           "strict": true
@@ -17,6 +26,9 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "localize": [
+              "pt-BR"
+            ],
             "outputPath": "dist/running-tools",
             "index": "src/index.html",
             "main": "src/main.ts",
