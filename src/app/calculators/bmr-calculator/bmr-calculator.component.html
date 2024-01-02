@@ -1,10 +1,8 @@
 <div class="container">
   <div class="calc-container">
-    <h3 class="mt-5 text-center">Basal Metabolic Rate Calculator</h3>
+    <h3 class="mt-5 text-center">{{ "bmrCalc.title" | translate }}</h3>
 
-    <p class="my-5">Understanding your BMR is a crucial step in optimizing your health and fitness journey. It serves as
-      the foundation for estimating daily caloric needs, aiding in goal-setting for weight management or maintaining a
-      healthy lifestyle.</p>
+    <p class="my-5">{{ "bmrCalc.firstParagraph" | translate }}</p>
 
     <form [formGroup]="form"
       (submit)="onSubmit()">
@@ -20,13 +18,13 @@
           step="1"
           formControlName="age"
           placeholder="age" />
-        <label for="floatingInput">age</label>
-        <div class="invalid-feedback">please insert a valid age</div>
+        <label for="floatingInput">{{ "bmrCalc.age" | translate }}</label>
+        <div class="invalid-feedback">{{ "bmrCalc.validation.ageInvalid" | translate }}</div>
       </div>
 
 
       <section class="row mb-3 align-items-center">
-        <label class="col-sm-2 col-form-label">Gender</label>
+        <label class="col-sm-2 col-form-label">{{ "bmrCalc.gender" | translate }}</label>
         <div class="col-sm-10">
           <div class="form-check form-check-inline">
             <input class="form-check-input"
@@ -36,7 +34,7 @@
               value="m"
               formControlName="gender" />
             <label class="form-check-label"
-              for="maleOption">male</label>
+              for="maleOption">{{ "bmrCalc.male" | translate }}</label>
           </div>
           <div class="form-check form-check-inline">
             <input class="form-check-input"
@@ -46,7 +44,7 @@
               value="f"
               formControlName="gender" />
             <label class="form-check-label"
-              for="femaleOption">female</label>
+              for="femaleOption">{{ "bmrCalc.female" | translate }}</label>
           </div>
         </div>
       </section>
@@ -62,8 +60,8 @@
           step="1"
           formControlName="height"
           placeholder="height">
-        <label for="floatingInput">height (in cm)</label>
-        <div class="invalid-feedback">please insert a valid height</div>
+        <label for="floatingInput">{{ "bmrCalc.height" | translate }}</label>
+        <div class="invalid-feedback">{{ "bmrCalc.validation.heightInvalid" | translate }}</div>
       </div>
 
       <div class="form-floating mb-3">
@@ -77,42 +75,42 @@
           step="1"
           formControlName="weight"
           placeholder="weight" />
-        <label for="floatingInput">weight (in kg)</label>
-        <div class="invalid-feedback">please insert a valid weight</div>
+        <label for="floatingInput">{{ "bmrCalc.weight" | translate }}</label>
+        <div class="invalid-feedback">{{ "bmrCalc.validation.weightInvalid" | translate }}</div>
       </div>
 
       <div class="container">
         <div class="row mb-2">
           <button type="submit"
             class="btn btn-primary"
-            type="submit">Calculate</button>
+            type="submit">{{ "controls.calculate" | translate }}</button>
         </div>
         <div class="row">
           <button type="reset"
             (click)="onReset()"
-            class="btn btn-light">Reset</button>
+            class="btn btn-light">{{ "controls.reset" | translate }}</button>
         </div>
       </div>
     </form>
 
     <section class="row mt-3"
       *ngIf="showResult">
-      <h3>Results</h3>
-      <p> BMR = {{ bmr | number:'1.0-0' }} calories per day </p>
+      <h3>{{ "bmrCalc.results.title" | translate }}</h3>
+      <p>{{ "bmrCalc.results.bmrResult" | translate:bmrDisplay }}</p>
     </section>
 
-    <ng-container *ngIf="bmr">
+    <ng-container *ngIf="bmr && showResult">
       <table class="table table-sm mt-4">
         <thead class="table-light">
           <tr>
-            <th>Activity level</th>
-            <th>Calories</th>
+            <th>{{ "bmrCalc.table.heading.activityLevel" | translate }}</th>
+            <th>{{ "bmrCalc.table.heading.calories" | translate }}</th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let al of activityLevels; index as i">
             <td>
-              {{ al.description }}
+              {{ al.description | translate }}
             </td>
             <td>
               {{ (al.multiplier * bmr) | number:'1.0-0' }}
@@ -121,11 +119,7 @@
         </tbody>
       </table>
 
-      <p class="my-5">
-        Keep in mind that these are rough estimates, and individual needs may vary. The best approach is to monitor your
-        weight and adjust your calorie intake based on real-world results. And, of course, consulting with a healthcare
-        professional or nutritionist is always a good idea!
-      </p>
+      <p class="my-5">{{ "bmrCalc.results.firstParagraph" | translate }}</p>
     </ng-container>
 
   </div>

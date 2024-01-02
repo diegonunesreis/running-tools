@@ -1,21 +1,12 @@
 <div class="container">
   <div class="calc-container">
-    <h3 class="mt-5 text-center">Pace Calculator</h3>
+    <h3 class="mt-5 text-center">{{ "paceCalc.title" | translate }}</h3>
 
-    <p class="mt-5">
-      Optimize your runs with our Pace Calculator. Effortlessly determine your pace per kilometer or mile based on your
-      desired time and distance. Featuring three simple fields—time, distance, and pace—you can tailor your training to
-      match your goals.
-    </p>
-    <p class="mb-5">
-      Fill in just two fields, and the calculator does the heavy lifting for you: know your time and distance? It
-      calculates the pace. Want to adjust your distance for a specific time? Simply input time and pace, and the
-      calculator reveals the ideal distance. An indispensable tool for optimizing your performance in street races.
-      Challenge yourself and achieve your goals with precision!
-    </p>
-      
+    <p class="mt-5">{{ "paceCalc.firstParagraph" | translate}}</p>
+    <p class="mb-5">{{ "paceCalc.secondPagagraph" | translate}}</p>
+
     <div class="calc-grid">
-      <span>Time</span>
+      <span>{{ "paceCalc.time" | translate }}</span>
       <ngb-timepicker id="time-picker"
         [(ngModel)]="time"
         [seconds]="true"
@@ -27,7 +18,7 @@
         <i class="ph-eraser"></i>
       </button>
 
-      <span>Distance</span>
+      <span>{{ "paceCalc.distance" | translate }}</span>
       <input type="number"
         id="distanceInput"
         name="distanceInput"
@@ -36,8 +27,8 @@
         onclick="this.select()" />
       <select class="form-select"
         [(ngModel)]="distanceUnit">
-        <option value="1">KM</option>
-        <option value="1.6">Miles</option>
+        <option value="1">/{{ "paceCalc.km" | translate }}</option>
+        <option value="1.6">/{{ "paceCalc.miles" | translate }}</option>
       </select>
       <button type="button"
         class="btn btn-warning clear-btn"
@@ -45,15 +36,15 @@
         <i class="ph-eraser"></i>
       </button>
 
-      <span>Pace</span>
+      <span>{{ "paceCalc.pace" | translate }}</span>
       <ngb-timepicker [(ngModel)]="pace"
         [seconds]="true"
         id="pacePicker">
       </ngb-timepicker>
       <select class="form-select"
         [(ngModel)]="paceUnit">
-        <option value="1">/KM</option>
-        <option value="1.6">/Mile</option>
+        <option value="1">/{{ "paceCalc.km" | translate }}</option>
+        <option value="1.6">/{{ "paceCalc.miles" | translate }}</option>
       </select>
       <button type="button"
         class="btn btn-warning clear-btn"
@@ -64,12 +55,12 @@
       <button type="button"
         class="btn btn-primary calc-btn mt-4"
         (click)="calculate()">
-        Calculate
+        {{ "controls.calculate" | translate}}
       </button>
       <button type="button"
         class="btn btn-light calc-btn mt-3"
         (click)="reset()">
-        Reset
+        {{ "controls.reset" | translate}}
       </button>
     </div>
   </div>

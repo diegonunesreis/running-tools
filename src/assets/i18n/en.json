@@ -1,0 +1,91 @@
+{
+  "paceCalcTitle": "Pace Calculator",
+  "hrCalcTitle": "Heart Rate",
+  "bmrCalcTitle": "Basal Metabolic Rate (BMR)",
+  "home": {
+    "paceDescription": "Determine your pace per kilometer or mile based on your desired time and distance.",
+    "hrDescription": "Discover personalized heart rate zones to enhance your fitness journey.",
+    "bmrDescription": "Understanding your metabolic baseline.",
+  },
+  "controls": {
+    "calculate": "Calculate",
+    "reset": "Reset"
+  },
+  "paceCalc": {
+    "title": "Pace Calculator",
+    "firstParagraph": "Optimize your runs with our Pace Calculator. Effortlessly determine your pace per kilometer or mile based on your desired time and distance. Featuring three simple fields—time, distance, and pace—you can tailor your training to match your goals.",
+    "secondPagagraph": "Fill in just two fields, and the calculator does the heavy lifting for you: know your time and distance? It calculates the pace. Want to adjust your distance for a specific time? Simply input time and pace, and the calculator reveals the ideal distance. An indispensable tool for optimizing your performance in street races. Challenge yourself and achieve your goals with precision!",
+    "time": "Time",
+    "distance": "Distance",
+    "pace": "Pace",
+    "km": "KM",
+    "miles": "Miles"
+  },
+  "hrCalc": {
+    "title": "Target Heart Rate Calculator",
+    "firstParagraph": "Unlock your optimal workout intensity with our Target Heart Rate Calculator. Tailor your exercise routine based on your age and preferred calculation method. Choose between Basic or Karvonen methods, input your age and, for advanced accuracy, include your resting heart rate. Instantly discover personalized heart rate zones to enhance your fitness journey. Hit the sweet spot between effort and efficiency for a healthier, more effective workout. Take control of your heart rate and maximize every beat with our intuitive calculator.",
+    "methods": {
+      "label": "Method",
+      "basic": "Basic",
+      "karvonen": "Karvonen"
+    },
+    "age": "Age",
+    "restHeartRate": "Resting Heart Rate",
+    "validation": {
+      "ageInvalid": "insert a valid age",
+      "hrrInvalid": "insert a valid resting heart rate"
+    },
+    "table": {
+      "heading": {
+        "targetZone": "Target Zone",
+        "intensity": "Intensity"
+      },
+      "data": {
+        "veryLight": "Very Light",
+        "warmUpZone": "Warm Up Zone",
+        "light": "Light",
+        "fatBurnZone": "Fat Burn Zone",
+        "moderate": "Moderate",
+        "aerobicZone": "Aerobic Zone",
+        "hard": "Hard",
+        "anaerobicZone": "Anaerobic Zone",
+        "maximum": "Maximum",
+        "vo2MaxZone": "VO2 Max Zone",
+        "thrResult": "THR in Bpm"
+      }
+    }
+  },
+  "bmrCalc": {
+    "title": "Basal Metabolic Rate Calculator",
+    "firstParagraph": "Understanding your BMR is a crucial step in optimizing your health and fitness journey. It serves as the foundation for estimating daily caloric needs, aiding in goal-setting for weight management or maintaining a healthy lifestyle.",
+    "age": "Age",
+    "gender": "Gender",
+    "height": "height (in cm)",
+    "weight": "weight (in kg)",
+    "male": "male",
+    "female": "female",
+    "validation": {
+      "ageInvalid": "please insert a valid age",
+      "heightInvalid": "please insert a valid height",
+      "weightInvalid": "please insert a valid weight"
+    },
+    "results": {
+      "title": "Results",
+      "bmrResult": "BMR = {{value}} calories per day",
+      "firstParagraph": "Keep in mind that these are rough estimates, and individual needs may vary. The best approach is to monitor your weight and adjust your calorie intake based on real-world results. And, of course, consulting with a healthcare professional or nutritionist is always a good idea!"
+    },
+    "table": {
+      "heading": {
+        "activityLevel": "Activity level",
+        "calories": "Calories"
+      },
+      "data": {
+        "sedentary": "Sedentary (little or no exercise)",
+        "light": "Lightly active (light exercise 1-3 days a week)",
+        "moderate": "Moderately active (moderate exercise 3-5 days a week)",
+        "very": "Very active (intense exercise 6-7 days a week)",
+        "extreme": "Extremely active (intense daily exercise, or physical labor job)"
+      }
+    }
+  }
+}
