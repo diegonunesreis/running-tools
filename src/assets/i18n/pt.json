@@ -1,0 +1,91 @@
+{
+  "paceCalcTitle": "Ritmo (pace)",
+  "hrCalcTitle": "Frequência Cardíaca",
+  "bmrCalcTitle": "Taxa Metabólica Basal (TMB)",
+  "home": {
+    "paceDescription": "Determine seu ritmo por quilômetro ou milha com base no tempo e na distância desejados.",
+    "hrDescription": "Descubra zonas de frequência cardíaca personalizadas para melhorar seus treinos.",
+    "bmrDescription": "Entenda sua linha basal para objetivos personalizados de nutrição."
+  },
+  "controls": {
+    "calculate": "Calcular",
+    "reset": "Limpar"
+  },
+  "paceCalc": {
+    "title": "Calculadora de Ritmo (Pace)",
+    "firstParagraph": "Otimize suas corridas com nossa Calculadora de Ritmo. Determine sem esforço seu ritmo por quilômetro ou milha com base no tempo e na distância desejados. Com apenas três campos - tempo, distância e ritmo - você pode ajustar seu treinamento de acordo com seus objetivos.",
+    "secondPagagraph": "Preencha apenas dois campos, e a calculadora faz todo o trabalho pesado para você: sabe o tempo e a distância? Ela calcula o ritmo. Quer ajustar a distância para um tempo específico? Basta inserir o tempo e o ritmo, e a calculadora revela a distância ideal. Uma ferramenta indispensável para otimizar seu desempenho em corridas de rua. Desafie-se e alcance seus objetivos com precisão!",
+    "time": "Tempo",
+    "distance": "Distância",
+    "pace": "Ritmo",
+    "km": "KM",
+    "miles": "Milhas"
+  },
+  "hrCalc": {
+    "title": "Calculadora de Frequência Cardíaca (FC)",
+    "firstParagraph": "Encontre a intensidade ideal do seu treino com nossa Calculadora de Frequência Cardíaca Alvo. Personalize sua rotina de exercícios com base em sua idade e no método de cálculo preferido. Escolha entre os métodos Básico ou Karvonen, insira sua idade e, para maior precisão, inclua sua frequência cardíaca em repouso. Descubra instantaneamente zonas de frequência cardíaca personalizadas para aprimorar sua jornada fitness. Encontre o equilíbrio perfeito entre esforço e eficiência para um treino mais saudável e eficaz. Controle sua frequência cardíaca e aproveite ao máximo cada batimento com nossa calculadora intuitiva.",
+    "methods": {
+      "label": "Método",
+      "basic": "Básico",
+      "karvonen": "Karvonen"
+    },
+    "age": "Idade",
+    "restHeartRate": "Frequência cardíaca em repouso",
+    "table": {
+      "heading": {
+        "targetZone": "Zona Alvo",
+        "intensity": "Intensidade"
+      },
+      "data": {
+        "veryLight": "Muito Leve",
+        "warmUpZone": "Zona de Aquecimento",
+        "light": "Leve",
+        "fatBurnZone": "Zona de Queima de Gordura",
+        "moderate": "Moderado",
+        "aerobicZone": "Zona Aeróbica",
+        "hard": "Difícil",
+        "anaerobicZone": "Zona Anaeróbica",
+        "maximum": "Máximo",
+        "vo2MaxZone": "Zona de VO2 Máx.",
+        "thrResult": "Zona de FC"
+      }
+    },
+    "validation": {
+      "ageInvalid": "insira uma idade válida",
+      "hrrInvalid": "insira uma frequência cardíaca em repouso válida"
+    }
+  },
+  "bmrCalc": {
+    "title": "Calculadora de Taxa Metabólica Basal (TMB)",
+    "firstParagraph": "Compreender sua TMB é uma etapa crucial para otimizar sua jornada de saúde e condicionamento físico. Serve de base para estimar as necessidades calóricas diárias, auxiliando no estabelecimento de metas para controle de peso ou manutenção de um estilo de vida saudável.",
+    "age": "Idade",
+    "gender": "Sexo",
+    "height": "Altura (em cm)",
+    "weight": "Peso (em kg)",
+    "male": "homem",
+    "female": "mulher",
+    "validation": {
+      "ageInvalid": "insira uma idade válida",
+      "heightInvalid": "insira uma altura válida",
+      "weightInvalid": "insira um peso válido"
+    },
+    "results": {
+      "title": "Resultado",
+      "bmrResult": "TMB = {{value}} calorias por dia",
+      "firstParagraph": "Tenha em mente que estas são estimativas aproximadas e as necessidades individuais podem variar. A melhor abordagem é monitorar seu peso e ajustar a ingestão de calorias com base em resultados reais. E, claro, consultar um profissional de saúde ou nutricionista é sempre uma boa ideia!"
+    },
+    "table": {
+      "heading": {
+        "activityLevel": "Nível de atividade",
+        "calories": "Calorias"
+      },
+      "data": {
+        "sedentary": "Sedentário (pouco ou nenhum exercício)",
+        "light": "Levemente ativo (exercício leve 1-3 dias por semana)",
+        "moderate": "Moderadamente ativo (exercício moderado 3-5 dias por semana)",
+        "very": "Muito ativo (exercício intenso 6-7 dias por semana)",
+        "extreme": "Extremamente ativo (exercício diário intenso ou trabalho físico intenso)"
+      }
+    }
+  }
+}

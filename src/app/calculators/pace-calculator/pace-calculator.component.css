@@ -28,13 +28,3 @@ FONT SIZE SYSTEM (px)
   font-size: 1.3em;
   font-weight: bold;
 }
-
-@media (min-width: 768px) { 
-  .clear-btn i {
-    display: none;
-  }
-
-  .clear-btn::before {
-    content: "Clear";
-  }  
-}

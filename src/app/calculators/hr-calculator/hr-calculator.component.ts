@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { HelperService } from 'src/app/utils/helper.service';
 
 @Component({
@@ -21,7 +22,7 @@ export class HrCalculatorComponent implements OnInit {
   ageInvalid = false;
   hrrInvalid = false;
 
-  constructor(public helper: HelperService) {}
+  constructor(public helper: HelperService, private translate: TranslateService) {}
 
   ngOnInit(): void {}
 
@@ -96,40 +97,40 @@ export class HrCalculatorComponent implements OnInit {
 
 export const targetMock = [
   {
-    name: 'Very Light',
-    description: 'Warm Up Zone',
+    name: 'hrCalc.table.data.veryLight',
+    description: 'hrCalc.table.data.warmUpZone',
     min_pct_intensity: 50,
     max_pct_intensity: 60,
     min_thr: 0,
     max_thr: 0,
   },
   {
-    name: 'Light',
-    description: 'Fat Burn Zone',
+    name: 'hrCalc.table.data.light',
+    description: 'hrCalc.table.data.fatBurnZone',
     min_pct_intensity: 60,
     max_pct_intensity: 70,
     min_thr: 0,
     max_thr: 0,
   },
   {
-    name: 'Moderate',
-    description: 'Aerobic Zone',
+    name: 'hrCalc.table.data.moderate',
+    description: 'hrCalc.table.data.aerobicZone',
     min_pct_intensity: 70,
     max_pct_intensity: 80,
     min_thr: 0,
     max_thr: 0,
   },
   {
-    name: 'Hard',
-    description: 'Anaerobic Zone',
+    name: 'hrCalc.table.data.hard',
+    description: 'hrCalc.table.data.anaerobicZone',
     min_pct_intensity: 80,
     max_pct_intensity: 90,
     min_thr: 0,
     max_thr: 0,
   },
   {
-    name: 'Maximum',
-    description: 'VO2 Max Zone',
+    name: 'hrCalc.table.data.maximum',
+    description: 'hrCalc.table.data.vo2MaxZone',
     min_pct_intensity: 90,
     max_pct_intensity: 100,
     min_thr: 0,

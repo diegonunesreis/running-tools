@@ -10,6 +10,13 @@
           "strict": true
         }
       },
+      "i18n": {
+        "sourceLocale":"en",
+        "locales": {
+          "pt": "src/assets/i18n/pt.json",
+          "es": "src/assets/i18n/en.json"
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",

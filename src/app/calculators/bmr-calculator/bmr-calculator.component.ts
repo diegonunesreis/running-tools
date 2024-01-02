@@ -1,5 +1,7 @@
+import { formatNumber } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { HelperService } from 'src/app/utils/helper.service';
 
 @Component({
   selector: 'app-bmr-calculator',
@@ -9,10 +11,11 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class BmrCalculatorComponent implements OnInit {
   form: FormGroup;
   bmr = 0;
+  bmrDisplay: { value: string };
   showResult = false;
   activityLevels = activityLevelsMocks;
 
-  constructor() {}
+  constructor(private helper: HelperService) {}
 
   ngOnInit(): void {
     this.createForm();
@@ -33,13 +36,13 @@ export class BmrCalculatorComponent implements OnInit {
     });
 
     if (this.form.invalid) {
-      console.log('formulario invalido');
       return;
     }
 
     this.bmr = 10 * this.weight.value + 6.25 * this.height.value - 5 * this.age.value;
     this.bmr = this.gender.value === 'm' ? this.bmr + 5 : this.bmr - 161;
 
+    this.bmrDisplay = { value: this.helper.formatNumberByLanguage(this.bmr) };
     this.showResult = true;
   }
 
@@ -66,23 +69,23 @@ export class BmrCalculatorComponent implements OnInit {
 
 const activityLevelsMocks = [
   {
-    description: 'Sedentary (little or no exercise)',
+    description: 'bmrCalc.table.data.sedentary',
     multiplier: 1.2,
   },
   {
-    description: 'Lightly active (light exercise 1-3 days a week)',
+    description: 'bmrCalc.table.data.light',
     multiplier: 1.375,
   },
   {
-    description: 'Moderately active (moderate exercise 3-5 days a week)',
+    description: 'bmrCalc.table.data.moderate',
     multiplier: 1.55,
   },
   {
-    description: 'Very active (intense exercise 6-7 days a week)',
+    description: 'bmrCalc.table.data.very',
     multiplier: 1.725,
   },
   {
-    description: 'Extremely active (intense daily exercise, or physical labor job)',
+    description: 'bmrCalc.table.data.extreme',
     multiplier: 1.9,
   },
 ];
