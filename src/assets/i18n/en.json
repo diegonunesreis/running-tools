@@ -5,7 +5,7 @@
   "home": {
     "paceDescription": "Determine your pace per kilometer or mile based on your desired time and distance.",
     "hrDescription": "Discover personalized heart rate zones to enhance your fitness journey.",
-    "bmrDescription": "Understanding your metabolic baseline.",
+    "bmrDescription": "Understanding your metabolic baseline."
   },
   "controls": {
     "calculate": "Calculate",
